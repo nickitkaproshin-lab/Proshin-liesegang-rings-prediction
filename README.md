@@ -169,4 +169,4 @@ The dataset is based on a comprehensive literature survey (1896–2025). The ful
 74. Kai, S.; Müller, S. C. Spatial and Temporal Patterns in Precipitation Reactions. Science 1985, *229*, 1015–1019. DOI: 10.1126/science.229.4717.1015.
 
 - Dataset: `liesegang_dataset.xlsx`
-- Code: `Proshin_liesegang_rings_model.ipynb`
+- Code: `Prediction of Liesegang Rings Machine python.py`
