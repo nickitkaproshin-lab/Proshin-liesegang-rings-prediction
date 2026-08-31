@@ -10,7 +10,7 @@ The final model was validated using **Leave‑One‑System‑Out (LOO‑CV)** cr
 
 ## Repository Structure
 
-- Prediction of Liesegang Rings Machine.py — main code
+- `Prediction of Liesegang Rings Machine.py` — main code
 - `liesegang_dataset.xlsx` — collected dataset (237 experiments, 194 with rings, 43 without; 133 with known `p`)
 - `README.md` — this file
 - (Optional) `app.py` — desktop GUI application for local predictions (if included)
