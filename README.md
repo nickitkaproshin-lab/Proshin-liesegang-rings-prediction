@@ -1,32 +1,51 @@
-# Liesegang Rings Prediction Model
+# Proshin-liesegang-rings-prediction
 
-**Author**: Nikita Proshin, Russia, Moscow, 2026
+**Author**: Nikita Proshin, Russia, Moscow, 2026  
+**GitHub**: [nickitkaproshin-lab/Proshin-liesegang-rings-prediction](https://github.com/nickitkaproshin-lab/Proshin-liesegang-rings-prediction)
 
 This repository contains the code and data for a two‑stage machine learning model that predicts the formation of periodic precipitates (Liesegang rings) in gels and their geometric parameter — the spacing coefficient `p`.  
-The model is based on an **XGBoost** algorithm and uses **15 physicochemical descriptors** (after VIF‑based feature selection) derived from diffusion, kinetic, and thermodynamic criteria.  
+The model is based on an **XGBoost** algorithm and uses **19 physicochemical descriptors** (after VIF‑based feature selection) derived from diffusion, kinetic, and thermodynamic criteria.  
 The final model was validated using **Leave‑One‑System‑Out (LOO‑CV)** cross‑validation and Bootstrap resampling, achieving state‑of‑the‑art predictive performance.
 
 ---
 
 ## Repository Structure
 
-- `Prediction of Liesegang Rings Machine.py` — main code
+- `Prediction of Liesegang Rings Machine python.py` — main code
+- `app.py` — GUI application
+- `data_loader.py` — data loading and reference dictionaries
+- `feature_engineering.py` — physicochemical feature calculation
+- `config.py` — model configuration
+- `model_train.py` — training and validation functions
 - `liesegang_dataset.xlsx` — collected dataset (237 experiments, 194 with rings, 43 without; 133 with known `p`)
+- `requirements.txt` — Python dependencies
 - `README.md` — this file
-- (Optional) `app.py` — desktop GUI application for local predictions (if included)
 
 ---
 
 ## Running the Model
 
-1. Open `Prediction of Liesegang Rings Machine.py`
-2. Run the first cell — a button for uploading the dataset will appear.
-3. Upload the file `liesegang_dataset.xlsx`.
-4. Wait for feature calculation and model training (about 10–20 seconds).
-5. After the interactive form appears, choose the mode:
-   - **Use trained model** — prediction based on the trained coefficients.
-   - **Manual calculation (custom coefficients)** — allows you to enter any classifier and regression coefficients.
-6. Enter all required parameters (see below) and click **“PREDICT”**.
+### Python Script
+1. Install dependencies: `pip install -r requirements.txt`
+2. Run `python "Prediction of Liesegang Rings Machine python.py"`
+3. Upload `liesegang_dataset.xlsx` when prompted
+4. Wait for feature calculation and model training (about 10–20 seconds)
+5. Enter all required parameters and click **"PREDICT"**
+
+### Standalone Executable (No Python required)
+
+If you don't want to install Python and all dependencies, download the ready‑to‑run executable:
+
+[📥 Download Proshin_Liesegang_Predictor_Machine.exe (ZIP archive, ~450 MB)](https://disk.yandex.ru/d/cPIJQzZGf9UhVg)
+
+**Instructions:**
+1. Follow the link and download the ZIP archive.
+2. Extract the archive to any folder.
+3. Run `Proshin_Liesegang_Predictor_Machine.exe`.
+4. Load the dataset `liesegang_dataset.xlsx` via the **"Load Dataset and Train"** button.
+5. Wait for training to complete (30–60 seconds).
+6. Enter experimental parameters and click **"Predict"**.
+7. Use **"Concentration Map"** to visualize ring formation zones.
 
 ---
 
@@ -64,28 +83,28 @@ The final model was validated using **Leave‑One‑System‑Out (LOO‑CV)** cr
 ## Interpretation of Results
 
 - **Probability of ring formation P** — a calibrated probability from 0 to 1.  
-  The optimal decision threshold (determined by Youden’s index) is **P ≥ 0.8363**.  
+  The optimal decision threshold (determined by Youden's index) is **P ≥ 0.8697**.  
   If P exceeds this threshold, the model predicts **rings will form**; otherwise, rings are absent.  
   **Classifier performance** (LOO‑CV):  
-  - Accuracy = 0.769  
-  - Precision = 0.918  
-  - Recall = 0.796  
-  - AUC‑ROC = 0.767  
+  - Accuracy = 0.781  
+  - Precision = 0.933  
+  - Recall = 0.789  
+  - AUC‑ROC = 0.801  
 
 - **Spacing coefficient p** — predicted ratio of distances between adjacent rings (only when rings are predicted).  
-  **Regression performance** (LOO‑CV on 133 positive examples):  
-  - MAE = 0.0203  
-  - R² = 0.676 (explains ~68% of variance)  
-  - Bootstrap (100 repeats) mean R² = 0.493 (95% CI: 0.11–0.75).  
+  **Regression performance** (LOO‑CV on 132 positive examples):  
+  - MAE = 0.0202  
+  - R² = 0.552 (explains ~55% of variance)  
+  - Bootstrap (100 repeats) mean R² = 0.712 (95% CI: 0.177–0.822).  
   The closer p is to 1, the more evenly spaced the rings.
 
 ---
 
 ## Example Prediction
 
-For the Ag₂Cr₂O₇ system (5% gelatin, C_in=0.1 M, C_out=0.1 M, T=22°C, pH=7, E=0):  
+For the Ag₂Cr₂O₇ system (5% gelatin, C_in=0.1 M, C_out=0.1 M, T=22°C, pH=5.5, E=0):  
 - Enter: D_in=1.65e-9, D_out=1.00e-9, r_in=1.15, r_out=2.50, z_in=1, z_out=2, nu_in=2, nu_out=1.  
-- Model output: P ≈ 0.96 (> 0.8363) → **rings will form**, p ≈ 1.075.
+- Model output: P ≈ 0.88 (> 0.8697) → **rings will form**, p ≈ 1.05.
 
 ---
 
@@ -93,9 +112,9 @@ For the Ag₂Cr₂O₇ system (5% gelatin, C_in=0.1 M, C_out=0.1 M, T=22°C, pH=
 
 - **Dataset**: 237 independent experiments compiled from 74 literature sources (1896–2025).  
 - **Feature engineering**: 21 initial physicochemical descriptors including modified Jablczynski criterion (X_corr), Damköhler (Da), Péclet (Pe), ionic strength, supersaturation, and cross‑interactions (lnX·pH, pH·E, etc.).  
-- **Feature selection**: Variance Inflation Factor (VIF) eliminated multicollinear variables, leaving **15 features** (including categorical gel‑type indicators, which were retained for their physical significance).  
-- **Validation**: Rigorous Leave‑One‑System‑Out cross‑validation (each chemical system held out in turn) and Bootstrap stability analysis.  
-- **Comparison with classical theories**: The model significantly outperforms the Matalon–Packter, Keller–Rubinow, Lagzi–Izsák “universal law”, and spinodal decomposition models (best classical R² = 0.220 vs. our R² = 0.676).
+- **Feature selection**: Variance Inflation Factor (VIF) eliminated multicollinear variables, leaving **19 features** (including categorical gel‑type indicators, which were retained for their physical significance).  
+- **Validation**: Rigorous Leave‑One‑System‑Out cross‑validation (each chemical system held out in turn) and Bootstrap stability analysis (1000 iterations).  
+- **Comparison with classical theories**: The model significantly outperforms the Matalon–Packter, Keller–Rubinow, Lagzi–Izsák "universal law", and spinodal decomposition models (best classical R² = 0.220 vs. our R² = 0.552).
 
 ---
 
@@ -170,3 +189,5 @@ The dataset is based on a comprehensive literature survey (1896–2025). The ful
 
 - Dataset: `liesegang_dataset.xlsx`
 - Code: `Prediction of Liesegang Rings Machine python.py`
+- Executable: `Proshin_Liesegang_Predictor_Machine.exe` (in ZIP archive from [Yandex Disk](https://disk.yandex.ru/d/cPIJQzZGf9UhVg))
+- Repository: [nickitkaproshin-lab/Proshin-liesegang-rings-prediction](https://github.com/nickitkaproshin-lab/Proshin-liesegang-rings-prediction)
