@@ -36,7 +36,7 @@ The final model was validated using **Leave‑One‑System‑Out (LOO‑CV)** cr
 
 If you don't want to install Python and all dependencies, download the ready‑to‑run executable:
 
-[📥 Download Proshin_Liesegang_Predictor_Machine.exe (ZIP archive, ~450 MB)](https://disk.yandex.ru/d/cPIJQzZGf9UhVg)
+[ Download Proshin_Liesegang_Predictor_Machine.exe (ZIP archive, ~450 MB)](https://disk.yandex.ru/d/cPIJQzZGf9UhVg)
 
 **Instructions:**
 1. Follow the link and download the ZIP archive.
