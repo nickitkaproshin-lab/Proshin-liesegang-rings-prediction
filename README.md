@@ -137,55 +137,55 @@ MIT License. The code and data are open for use and modification with attributio
 
 The dataset is based on a comprehensive literature survey (1896–2025). The full list of 74 sources is provided in the article and in the code repository. Key references are:
 
-26. Das, I.; Pushkarna, A.; Agrawal, N. R. Chemical instability and periodic precipitation of copper chromate in gel media. J. Indian Chem. Soc. 2004, *81*, 581–586.  
-27. Das, I.; Pushkarna, A.; Chand, S. Chemical instability and periodic precipitation of CuCrO₄ in batch and flow reactors. Indian J. Chem. A 2019, *58*, 341–348.  
-28. Morsali, M.; Ghiaci, M. Liesegang Rings in the Cu-Cr System. J. Colloid Interface Sci. 2014, *418*, 254–259. DOI: 10.1016/j.jcis.2013.12.018.  
-29. Swami, S. N.; Kant, K. Liesegang rings of copper chromate in gelatin gel. Colloid Polym. Sci. 2005, *209*, 56–57. DOI: 10.1007/BF01500047.  
-30. Sultan, R.; Sadek, S. Patterning Trends and Chaotic Behavior in Co²⁺/NH₄OH Liesegang Systems. J. Phys. Chem. 1996, *100*, 16912–16920. DOI: 10.1021/jp961239d.  
-31. Kant, K. Liesegang rings of lead chromate. Part I. Kolloid-Z. Z. Polym. 1963, *189*, 155–156. DOI: 10.1007/BF01499512.  
-32. Das, I.; Pushkarna, A.; Lall, K. Light Induced Liesegang Type Patterns in Batch and Flow Reactors. J. Sci. Ind. Res. 2001, *60*, 234–238.  
-33. Bohner, B.; Schuszter, G.; Lagzi, I. Controlling Pattern Formation in the Cobalt-Hydroxide System. J. Phys. Chem. A 2016, *120*, 5569–5575. DOI: 10.1021/acs.jpca.6b04684.  
-34. George, J.; Varghese, G. Studies on Liesegang rings of cobalt hydroxide in 1% agar gel medium. J. Mol. Liq. 2015, *204*, 205–209. DOI: 10.1016/j.molliq.2015.01.031.  
-35. George, J.; Varghese, G. Periodic precipitation of cobalt hydroxide in agar gel: Effect of ionic strength. J. Mol. Liq. 2017, *241*, 37–42. DOI: 10.1016/j.molliq.2017.06.008.  
-36. George, J.; Varghese, G. Liesegang Patterns in Chitosan Hydrogels. J. Mater. Sci. 2006, *41*, 2535–2542. DOI: 10.1007/s10853-006-7859-7.  
-37. Badr, L.; Sultan, R. Ring Morphology and pH Effects in 2D and 1D Co(OH)₂ Liesegang Systems. J. Phys. Chem. A 2009, *113*, 6264–6270. DOI: 10.1021/jp9032349.  
-38. Shreif, Z.; Mandalian, L.; Abi-Haydar, A.; Sultan, R. Taming ring morphology in 2D Co(OH)₂ Liesegang patterns. Chem. Phys. Lett. 2010, *492*, 35–39. DOI: 10.1016/j.cplett.2010.04.030.  
-39. Sultan, R.; Panjarian, S. Morphology of a 2D Mg²⁺/NH₄OH Liesegang pattern in zero, positive and negative radial electric field. Chem. Phys. Lett. 2010, *492*, 35–39. DOI: 10.1016/j.cplett.2010.04.030.  
-40. Badr, L.; El-Rassy, H.; El-Joubeily, S.; Sultan, R. Morphology of a 2D Mg²⁺/NH₄OH Liesegang pattern in zero, positive and negative radial electric field. Chem. Phys. Lett. 2010. DOI: 10.1016/j.cplett.2010.04.030.  
-41. Sultan, R.; Halabieh, R. Effect of an electric field on propagating Co(OH)₂ Liesegang patterns. Chem. Phys. Lett. 2000, *329*, 217–222. DOI: 10.1016/S0009-2614(00)00991-9.  
-42. Meng, X.; et al. Polymorphs Co hydroxides formed between hydrazine and Co²⁺ as Liesegang bands in semisolid agar gel. J. Mol. Liq. 2018, *268*, 190–196. DOI: 10.1016/j.molliq.2018.07.037.  
-43. Traetteberg, J.; Devik, O. Formation of calcium phosphate studied with Liesegang's rings. Kolloid-Z. Z. Polym. 1962, *180*, 35–41. DOI: 10.1007/BF01500699.  
-44. Devik, O. Formation of calcium phosphate studied with Liesegang's Rings. III. Mechanism of ring formation. Kolloid-Z. 1962, *181*, 33–38. DOI: 10.1007/BF01500699.  
-45. Kibalczyc, W.; Sokołowski, T.; Wiktorowska, B. Growth of calcium phosphate crystals in silica gel. Cryst. Res. Technol. 1984, *19*, 27–32. DOI: 10.1002/crat.2170190112.  
-46. Karoly, Z.; et al. Synthesis and characterization of carbonated fluorapatite-gelatine nanocomposites within Liesegang bands. Mater. Sci. Eng. C 2010, *30*, 672–678. DOI: 10.1016/j.msec.2010.02.015.  
-47. Rosseeva, E. V.; et al. Synthesis, characterization, and morphogenesis of carbonated fluorapatite-gelatine nanocomposites: A complex biomimetic approach toward the mineralization of hard tissues. Chem. Mater. 2008, *20*, 6003–6013. DOI: 10.1021/cm8005748.  
-48. Eltantawy, M. M.; Belokon, M. A.; Belogub, E. V.; Ledovich, O. I.; Skorb, E. V.; Ulasevich, S. A. Self-Assembled Liesegang Rings of Hydroxyapatite for Cell Culturing. Adv. NanoBiomed Res. 2021, *1*, 2000048. DOI: 10.1002/anbr.202000048.  
-49. George, J.; Varghese, G. Studies on Liesegang rings of copper molybdate in agar gel medium. J. Mol. Liq. 2013, *178*, 132–136. DOI: 10.1016/j.molliq.2012.11.020.  
-50. Periodic crystallization of barium oxalate in silica hydrogel. Bull. Mater. Sci. 2020, *43*, 123. DOI: 10.1007/s12034-020-02095-8.  
-51. Mechanism of Formation of Cadmium Oxalate Liesegang Rings. J. Colloid Interface Sci. 1994, *167*, 345–351. DOI: 10.1006/jcis.1994.1369.  
-52. Kant, K. Liesegang rings of lead iodide. Part II. Kolloid-Z. Z. Polym. 1963, *189*, 155–156. DOI: 10.1007/BF01499513.  
-53. Sakamoto, S.; Itatani, M.; Tsukada, K.; Nabika, H. Regular-Type Liesegang Pattern of AgCl in a One-Dimensional System. Materials 2021, *14*, 1526. DOI: 10.3390/ma14061526.  
-54. Badr, L.; Toramaru, A.; Sultan, R. Experimental pattern transitions in a Liesegang system. Physica D 2003, *183*, 133–140. DOI: 10.1016/S0167-2789(03)00139-8.  
-55. Kumar, P.; Karmakar, S. Obstruction scaling model for the diffusion of the outer electrolyte leading to Liesegang patterns of (AgNO₃ + KCl) system in agarose hydrogel. Chem. Pap. 2021, *75*, 329–340. DOI: 10.1007/s11696-020-01304-2.  
-56. Kant, K. Liesegang rings of lead chromate. Part II. Kolloid-Z. Z. Polym. 1963, *189*, 155–156. DOI: 10.1007/BF01499512.  
-57. Mehta, B. M.; Kant, K. Formation of Liesegang rings of copper sulphide. Kolloid-Z. Z. Polym. 1966, *209*, 54–56. DOI: 10.1007/BF01500046.  
-58. Palaniandavar, N.; Gnanam, F. D.; Ramasamy, P. Diffusion controlled autocatalytic growth of revert periodic precipitation of cadmium sulphide in lyophillic colloid. J. Chem. Phys. 1984, *80*, 3448–3455. DOI: 10.1063/1.447103.  
-59. Sultan, R.; Ortoleva, P. Periodic and Aperiodic Precipitation Patterns. J. Chem. Phys. 1990, *92*, 220–228. DOI: 10.1063/1.458435.  
-60. Sultan, R.; Ortoleva, P. Periodic and aperiodic macroscopic patterning in two precipitate post-nucleation systems. Physica D 1993, *63*, 163–173. DOI: 10.1016/0167-2789(93)90154-7.  
-61. The Precipitation of Strontium Sulfate in Gels. Digital Library UNT. https://digital.library.unt.edu/ (accessed 2026-04-24).  
-62. Estimation of diffusion coefficient of lanthanum ions from one-dimensional Liesegang formation. INIS-MF-10571, 1985. INIS Repository.  
-63. Growth of mixed rare-earth tartrate crystals from silica-gels. University of Bologna, Dipartimento di Chimica G. Ciamician, 1990.  
-64. Al-Ghoul, M.; Ammar, M.; Al-Kaysi, R. O. Pattern Selection in Three-Precipitate Liesegang Systems. ACS Omega 2024, *9*, 43635–43641. DOI: 10.1021/acsomega.4c05000.  
-65. Liesegang pattern formation by gas diffusion in silica aerogels. J. Non-Cryst. Solids 1998, *225*, 69–73. DOI: 10.1016/S0022-3093(98)00111-4.  
-66. Liu, W. Y. [某些混合无机盐体系形成 Liesegang 环的研究]. J. Ningxia Univ. (Nat. Sci. Ed.) 1993, *14*, 45–49.  
-67. Das, I.; et al. Studies on mixed metal chromate Liesegang systems. J. Indian Chem. Soc. 2000, *77*, 241–243.  
-68. Msharrafieh, M.; et al. Front propagation in patterned precipitation. 3. Composition variations in two-precipitate stratum dynamics. J. Phys. Chem. A 2007, *111*, 6967–6976. DOI: 10.1021/jp0712345.  
-69. Sultan, R.; et al. Liesegang Ring Type Structures and Bifurcation in Solid-Vapor and Liquid Phase Reactions between Cobalt Nitrate and Ammonium Hydroxide. J. Colloid Interface Sci. 1997, *192*, 420–431. DOI: 10.1006/jcis.1997.5035.  
-70. Arteaga-Larios, F.; Sheu, E. Y.; Perez, E. Asphaltene Flocculation, Precipitation, and Liesegang Ring. Energy Fuels 2004, *18*, 132–139. DOI: 10.1021/ef030108p.  
-71. Spotz, E. L. Some properties of gases and gaseous reactions. Ph.D. Dissertation, University of Wisconsin, Madison, 1950.  
-72. Hedges, E. S. Liesegang Rings and Other Periodic Structures; Chapman and Hall: London, 1932.  
-73. Müller, S. C.; Kai, S.; Ross, J. Periodic precipitation patterns in the presence of concentration gradients. Science 1982, *216*, 635–637. DOI: 10.1126/science.216.4546.635.  
-74. Kai, S.; Müller, S. C. Spatial and Temporal Patterns in Precipitation Reactions. Science 1985, *229*, 1015–1019. DOI: 10.1126/science.229.4717.1015.
+Das, I.; Pushkarna, A.; Agrawal, N. R. Chemical instability and periodic precipitation of copper chromate in gel media. J. Indian Chem. Soc. 2004, *81*, 581–586.  
+Das, I.; Pushkarna, A.; Chand, S. Chemical instability and periodic precipitation of CuCrO₄ in batch and flow reactors. Indian J. Chem. A 2019, *58*, 341–348.  
+Morsali, M.; Ghiaci, M. Liesegang Rings in the Cu-Cr System. J. Colloid Interface Sci. 2014, *418*, 254–259. DOI: 10.1016/j.jcis.2013.12.018.  
+Swami, S. N.; Kant, K. Liesegang rings of copper chromate in gelatin gel. Colloid Polym. Sci. 2005, *209*, 56–57. DOI: 10.1007/BF01500047.  
+Sultan, R.; Sadek, S. Patterning Trends and Chaotic Behavior in Co²⁺/NH₄OH Liesegang Systems. J. Phys. Chem. 1996, *100*, 16912–16920. DOI: 10.1021/jp961239d.  
+Kant, K. Liesegang rings of lead chromate. Part I. Kolloid-Z. Z. Polym. 1963, *189*, 155–156. DOI: 10.1007/BF01499512.  
+Das, I.; Pushkarna, A.; Lall, K. Light Induced Liesegang Type Patterns in Batch and Flow Reactors. J. Sci. Ind. Res. 2001, *60*, 234–238.  
+Bohner, B.; Schuszter, G.; Lagzi, I. Controlling Pattern Formation in the Cobalt-Hydroxide System. J. Phys. Chem. A 2016, *120*, 5569–5575. DOI: 10.1021/acs.jpca.6b04684.  
+George, J.; Varghese, G. Studies on Liesegang rings of cobalt hydroxide in 1% agar gel medium. J. Mol. Liq. 2015, *204*, 205–209. DOI: 10.1016/j.molliq.2015.01.031.  
+George, J.; Varghese, G. Periodic precipitation of cobalt hydroxide in agar gel: Effect of ionic strength. J. Mol. Liq. 2017, *241*, 37–42. DOI: 10.1016/j.molliq.2017.06.008.  
+George, J.; Varghese, G. Liesegang Patterns in Chitosan Hydrogels. J. Mater. Sci. 2006, *41*, 2535–2542. DOI: 10.1007/s10853-006-7859-7.  
+Badr, L.; Sultan, R. Ring Morphology and pH Effects in 2D and 1D Co(OH)₂ Liesegang Systems. J. Phys. Chem. A 2009, *113*, 6264–6270. DOI: 10.1021/jp9032349.  
+Shreif, Z.; Mandalian, L.; Abi-Haydar, A.; Sultan, R. Taming ring morphology in 2D Co(OH)₂ Liesegang patterns. Chem. Phys. Lett. 2010, *492*, 35–39. DOI: 10.1016/j.cplett.2010.04.030.  
+Sultan, R.; Panjarian, S. Morphology of a 2D Mg²⁺/NH₄OH Liesegang pattern in zero, positive and negative radial electric field. Chem. Phys. Lett. 2010, *492*, 35–39. DOI: 10.1016/j.cplett.2010.04.030.  
+Badr, L.; El-Rassy, H.; El-Joubeily, S.; Sultan, R. Morphology of a 2D Mg²⁺/NH₄OH Liesegang pattern in zero, positive and negative radial electric field. Chem. Phys. Lett. 2010. DOI: 10.1016/j.cplett.2010.04.030.  
+Sultan, R.; Halabieh, R. Effect of an electric field on propagating Co(OH)₂ Liesegang patterns. Chem. Phys. Lett. 2000, *329*, 217–222. DOI: 10.1016/S0009-2614(00)00991-9.  
+Meng, X.; et al. Polymorphs Co hydroxides formed between hydrazine and Co²⁺ as Liesegang bands in semisolid agar gel. J. Mol. Liq. 2018, *268*, 190–196. DOI: 10.1016/j.molliq.2018.07.037.  
+Traetteberg, J.; Devik, O. Formation of calcium phosphate studied with Liesegang's rings. Kolloid-Z. Z. Polym. 1962, *180*, 35–41. DOI: 10.1007/BF01500699.  
+Devik, O. Formation of calcium phosphate studied with Liesegang's Rings. III. Mechanism of ring formation. Kolloid-Z. 1962, *181*, 33–38. DOI: 10.1007/BF01500699.  
+Kibalczyc, W.; Sokołowski, T.; Wiktorowska, B. Growth of calcium phosphate crystals in silica gel. Cryst. Res. Technol. 1984, *19*, 27–32. DOI: 10.1002/crat.2170190112.  
+Karoly, Z.; et al. Synthesis and characterization of carbonated fluorapatite-gelatine nanocomposites within Liesegang bands. Mater. Sci. Eng. C 2010, *30*, 672–678. DOI: 10.1016/j.msec.2010.02.015.  
+Rosseeva, E. V.; et al. Synthesis, characterization, and morphogenesis of carbonated fluorapatite-gelatine nanocomposites: A complex biomimetic approach toward the mineralization of hard tissues. Chem. Mater. 2008, *20*, 6003–6013. DOI: 10.1021/cm8005748.  
+Eltantawy, M. M.; Belokon, M. A.; Belogub, E. V.; Ledovich, O. I.; Skorb, E. V.; Ulasevich, S. A. Self-Assembled Liesegang Rings of Hydroxyapatite for Cell Culturing. Adv. NanoBiomed Res. 2021, *1*, 2000048. DOI: 10.1002/anbr.202000048.  
+George, J.; Varghese, G. Studies on Liesegang rings of copper molybdate in agar gel medium. J. Mol. Liq. 2013, *178*, 132–136. DOI: 10.1016/j.molliq.2012.11.020.  
+Periodic crystallization of barium oxalate in silica hydrogel. Bull. Mater. Sci. 2020, *43*, 123. DOI: 10.1007/s12034-020-02095-8.  
+Mechanism of Formation of Cadmium Oxalate Liesegang Rings. J. Colloid Interface Sci. 1994, *167*, 345–351. DOI: 10.1006/jcis.1994.1369.  
+Kant, K. Liesegang rings of lead iodide. Part II. Kolloid-Z. Z. Polym. 1963, *189*, 155–156. DOI: 10.1007/BF01499513.  
+Sakamoto, S.; Itatani, M.; Tsukada, K.; Nabika, H. Regular-Type Liesegang Pattern of AgCl in a One-Dimensional System. Materials 2021, *14*, 1526. DOI: 10.3390/ma14061526.  
+Badr, L.; Toramaru, A.; Sultan, R. Experimental pattern transitions in a Liesegang system. Physica D 2003, *183*, 133–140. DOI: 10.1016/S0167-2789(03)00139-8.  
+Kumar, P.; Karmakar, S. Obstruction scaling model for the diffusion of the outer electrolyte leading to Liesegang patterns of (AgNO₃ + KCl) system in agarose hydrogel. Chem. Pap. 2021, *75*, 329–340. DOI: 10.1007/s11696-020-01304-2.  
+Kant, K. Liesegang rings of lead chromate. Part II. Kolloid-Z. Z. Polym. 1963, *189*, 155–156. DOI: 10.1007/BF01499512.  
+Mehta, B. M.; Kant, K. Formation of Liesegang rings of copper sulphide. Kolloid-Z. Z. Polym. 1966, *209*, 54–56. DOI: 10.1007/BF01500046.  
+Palaniandavar, N.; Gnanam, F. D.; Ramasamy, P. Diffusion controlled autocatalytic growth of revert periodic precipitation of cadmium sulphide in lyophillic colloid. J. Chem. Phys. 1984, *80*, 3448–3455. DOI: 10.1063/1.447103.  
+Sultan, R.; Ortoleva, P. Periodic and Aperiodic Precipitation Patterns. J. Chem. Phys. 1990, *92*, 220–228. DOI: 10.1063/1.458435.  
+Sultan, R.; Ortoleva, P. Periodic and aperiodic macroscopic patterning in two precipitate post-nucleation systems. Physica D 1993, *63*, 163–173. DOI: 10.1016/0167-2789(93)90154-7.  
+The Precipitation of Strontium Sulfate in Gels. Digital Library UNT. https://digital.library.unt.edu/ (accessed 2026-04-24).  
+Estimation of diffusion coefficient of lanthanum ions from one-dimensional Liesegang formation. INIS-MF-10571, 1985. INIS Repository.  
+Growth of mixed rare-earth tartrate crystals from silica-gels. University of Bologna, Dipartimento di Chimica G. Ciamician, 1990.  
+Al-Ghoul, M.; Ammar, M.; Al-Kaysi, R. O. Pattern Selection in Three-Precipitate Liesegang Systems. ACS Omega 2024, *9*, 43635–43641. DOI: 10.1021/acsomega.4c05000.
+Liesegang pattern formation by gas diffusion in silica aerogels. J. Non-Cryst. Solids 1998, *225*, 69–73. DOI: 10.1016/S0022-3093(98)00111-4.  
+Liu, W. Y. [某些混合无机盐体系形成 Liesegang 环的研究]. J. Ningxia Univ. (Nat. Sci. Ed.) 1993, *14*, 45–49.  
+Das, I.; et al. Studies on mixed metal chromate Liesegang systems. J. Indian Chem. Soc. 2000, *77*, 241–243.  
+Msharrafieh, M.; et al. Front propagation in patterned precipitation. 3. Composition variations in two-precipitate stratum dynamics. J. Phys. Chem. A 2007, *111*, 6967–6976. DOI: 10.1021/jp0712345.  
+Sultan, R.; et al. Liesegang Ring Type Structures and Bifurcation in Solid-Vapor and Liquid Phase Reactions between Cobalt Nitrate and Ammonium Hydroxide. J. Colloid Interface Sci. 1997, *192*, 420–431. DOI: 10.1006/jcis.1997.5035.  
+Arteaga-Larios, F.; Sheu, E. Y.; Perez, E. Asphaltene Flocculation, Precipitation, and Liesegang Ring. Energy Fuels 2004, *18*, 132–139. DOI: 10.1021/ef030108p.  
+Spotz, E. L. Some properties of gases and gaseous reactions. Ph.D. Dissertation, University of Wisconsin, Madison, 1950.  
+Hedges, E. S. Liesegang Rings and Other Periodic Structures; Chapman and Hall: London, 1932.  
+Müller, S. C.; Kai, S.; Ross, J. Periodic precipitation patterns in the presence of concentration gradients. Science 1982, *216*, 635–637. DOI: 10.1126/science.216.4546.635.  
+Kai, S.; Müller, S. C. Spatial and Temporal Patterns in Precipitation Reactions. Science 1985, *229*, 1015–1019. DOI: 10.1126/science.229.4717.1015.
 
 - Dataset: `liesegang_dataset.xlsx`
 - Code: `Prediction of Liesegang Rings Machine python.py`
