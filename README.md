@@ -230,3 +230,4 @@ Kai, S.; Müller, S. C. Spatial and Temporal Patterns in Precipitation Reactions
 - Executable: `Proshin_Liesegang_Predictor_Machine.exe` (in ZIP archive from [Yandex Disk](https://disk.yandex.ru/d/cPIJQzZGf9UhVg))
 - Repository: [nickitkaproshin-lab/Proshin-liesegang-rings-prediction](https://github.com/nickitkaproshin-lab/Proshin-liesegang-rings-prediction)
 - Preprint: [10.5281/zenodo.22682566](https://doi.org/10.5281/zenodo.22682566)
+- Preprint: [10.5281/zenodo.22688748](https://doi.org/10.5281/zenodo.22688748)
