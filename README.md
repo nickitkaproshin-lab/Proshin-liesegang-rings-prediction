@@ -3,16 +3,30 @@
 **Author**: Nikita Proshin, Russia, Moscow, 2026  
 **GitHub**: [nickitkaproshin-lab/Proshin-liesegang-rings-prediction](https://github.com/nickitkaproshin-lab/Proshin-liesegang-rings-prediction)
 
-This repository contains the code and data for a two‑stage machine learning model that predicts the formation of periodic precipitates (Liesegang rings) in gels and their geometric parameter — the spacing coefficient `p`.  
-The model is based on an **XGBoost** algorithm and uses **19 physicochemical descriptors** (after VIF‑based feature selection) derived from diffusion, kinetic, and thermodynamic criteria.  
-The final model was validated using **Leave‑One‑System‑Out (LOO‑CV)** cross‑validation and Bootstrap resampling, achieving state‑of‑the‑art predictive performance.
+This repository contains the code and data for a **two-regime machine learning model** that predicts the formation of periodic precipitates (Liesegang rings) in gels and their geometric parameter — the spacing coefficient `p`.  
+
+The model is based on a **two-stage XGBoost architecture**:  
+- A **classifier** trained on **19 physicochemical descriptors** (after VIF-based feature selection) derived from diffusion, kinetic, and thermodynamic criteria, predicting ring *occurrence*.  
+- A **regressor** trained on **only 3 electrokinetic features** (`Pe`, `pH`, `pH·E`) derived from the ablation analysis, predicting ring *geometry* (spacing factor `p`).
+
+This two-regime design was motivated by a fundamental physical finding: ring **nucleation** and ring **geometry** are governed by **independent physicochemical mechanisms**. The model was validated using **Leave-One-System-Out (LOO-CV)** cross-validation and Bootstrap resampling, achieving state-of-the-art predictive performance.
+
+---
+
+## Related Publication
+
+The physical mechanism behind the two-regime architecture is described in the following preprint:
+
+> Proshin, N. V. *Liesegang Rings Have Two Different Physics: Decoupling Nucleation from Geometry via Machine Learning*. Zenodo, 2026. DOI: [10.5281/zenodo.22682566](https://doi.org/10.5281/zenodo.22682566)
+
+The preprint presents **five independent proofs of physical decoupling** (ablation, mutual information, counterfactual analysis, classical-formula benchmarks, and non-parametric statistics) and the full physicochemical interpretation.
 
 ---
 
 ## Repository Structure
 
 - `Prediction of Liesegang Rings Machine python.py` — main code
-- `app.py` — GUI application
+- `app.py` — GUI application (two-regime model v3.0)
 - `data_loader.py` — data loading and reference dictionaries
 - `feature_engineering.py` — physicochemical feature calculation
 - `config.py` — model configuration
@@ -34,9 +48,9 @@ The final model was validated using **Leave‑One‑System‑Out (LOO‑CV)** cr
 
 ### Standalone Executable (No Python required)
 
-If you don't want to install Python and all dependencies, download the ready‑to‑run executable:
+If you don't want to install Python and all dependencies, download the ready-to-run executable:
 
-[ Download Proshin_Liesegang_Predictor_Machine.exe (ZIP archive, ~450 MB)](https://disk.yandex.ru/d/cPIJQzZGf9UhVg)
+[Download Proshin_Liesegang_Predictor_Machine.exe (ZIP archive, ~450 MB)](https://disk.yandex.ru/d/cPIJQzZGf9UhVg)
 
 **Instructions:**
 1. Follow the link and download the ZIP archive.
@@ -82,48 +96,68 @@ If you don't want to install Python and all dependencies, download the ready‑t
 
 ## Interpretation of Results
 
-- **Probability of ring formation P** — a calibrated probability from 0 to 1.  
-  The optimal decision threshold (determined by Youden's index) is **P ≥ 0.8697**.  
-  If P exceeds this threshold, the model predicts **rings will form**; otherwise, rings are absent.  
-  **Classifier performance** (LOO‑CV):  
-  - Accuracy = 0.781  
-  - Precision = 0.933  
-  - Recall = 0.789  
-  - AUC‑ROC = 0.801  
+### Probability of ring formation P
 
-- **Spacing coefficient p** — predicted ratio of distances between adjacent rings (only when rings are predicted).  
-  **Regression performance** (LOO‑CV on 132 positive examples):  
-  - MAE = 0.0202  
-  - R² = 0.552 (explains ~55% of variance)  
-  - Bootstrap (100 repeats) mean R² = 0.712 (95% CI: 0.177–0.822).  
-  The closer p is to 1, the more evenly spaced the rings.
+A calibrated probability from 0 to 1. The optimal decision threshold (determined by Youden's index on the LOO-CV predictions) is **P ≥ 0.864**. If P exceeds this threshold, the model predicts **rings will form**; otherwise, rings are absent.
+
+**Classifier performance** (LOO-CV, 19 features):
+- Accuracy = 0.781
+- Precision = 0.933
+- Recall = 0.789
+- AUC-ROC = 0.801
+
+### Spacing coefficient p
+
+Predicted ratio of distances between adjacent rings (only when rings are predicted). **The regressor uses only 3 electrokinetic features** (`Pe`, `pH`, `pH·E`).
+
+**Regression performance** (LOO-CV on 132 positive examples, 3 features):
+- MAE = 0.0205
+- **R² = 0.658** (explains ~66% of variance)
+- Bootstrap (1000 iterations) mean R² = 0.712 (95% CI: 0.177–0.822)
+
+**Note**: the 3-feature regressor *outperforms* the full 23-feature regressor (R² = 0.658 vs. 0.552). Adding the remaining 20 physicochemical descriptors degrades performance, providing independent confirmation of the physical decoupling. The closer p is to 1, the more evenly spaced the rings.
 
 ---
 
 ## Example Prediction
 
-For the Ag₂Cr₂O₇ system (5% gelatin, C_in=0.1 M, C_out=0.1 M, T=22°C, pH=5.5, E=0):  
-- Enter: D_in=1.65e-9, D_out=1.00e-9, r_in=1.15, r_out=2.50, z_in=1, z_out=2, nu_in=2, nu_out=1.  
-- Model output: P ≈ 0.88 (> 0.8697) → **rings will form**, p ≈ 1.05.
+For the Ag₂Cr₂O₇ system (5% gelatin, C_in = 0.1 M, C_out = 0.1 M, T = 22°C, pH = 5.5, E = 0):
+
+- Enter: D_in = 1.65e-9, D_out = 1.00e-9, r_in = 1.15, r_out = 2.50, z_in = 1, z_out = 2, nu_in = 2, nu_out = 1.
+- Model output: P ≈ 0.88 (> 0.864) → **rings will form**, p ≈ 1.09.
 
 ---
 
 ## Model Development and Validation
 
-- **Dataset**: 237 independent experiments compiled from 74 literature sources (1896–2025).  
-- **Feature engineering**: 21 initial physicochemical descriptors including modified Jablczynski criterion (X_corr), Damköhler (Da), Péclet (Pe), ionic strength, supersaturation, and cross‑interactions (lnX·pH, pH·E, etc.).  
-- **Feature selection**: Variance Inflation Factor (VIF) eliminated multicollinear variables, leaving **19 features** (including categorical gel‑type indicators, which were retained for their physical significance).  
-- **Validation**: Rigorous Leave‑One‑System‑Out cross‑validation (each chemical system held out in turn) and Bootstrap stability analysis (1000 iterations).  
-- **Comparison with classical theories**: The model significantly outperforms the Matalon–Packter, Keller–Rubinow, Lagzi–Izsák "universal law", and spinodal decomposition models (best classical R² = 0.220 vs. our R² = 0.552).
+- **Dataset**: 237 independent experiments compiled from 74 literature sources (1896–2025).
+- **Feature engineering**: 21 initial physicochemical descriptors including modified Jablczynski criterion (X_corr), Damköhler (Da), Péclet (Pe), ionic strength, supersaturation, and cross-interactions (lnX·pH, pH·E, etc.).
+- **Feature selection**: Variance Inflation Factor (VIF) eliminated multicollinear variables, leaving **19 features for the classifier**. The regressor uses a fixed set of **3 electrokinetic features** (Pe, pH, pH·E), determined by ablation analysis.
+- **Two-regime architecture (v3.0)**: The model was split into two independent pipelines based on the discovery that ring nucleation and ring geometry are physically decoupled:
+  - **Classifier** — 19 features (gel structure, kinetics, thermodynamics, cross-interactions) → predicts ring *occurrence*.
+  - **Regressor** — 3 electrokinetic features (Pe, pH, pH·E) → predicts the spacing factor `p`.
+- **Validation**: Rigorous Leave-One-System-Out cross-validation (each chemical system held out in turn) and Bootstrap stability analysis (1000 iterations).
+- **Comparison with classical theories**: The model significantly outperforms the Matalon–Packter, Keller–Rubinow, Lagzi–Izsák "universal law", and spinodal decomposition models (best classical R² = 0.220 vs. our R² = 0.658).
+
+### Five independent proofs of physical decoupling
+
+The physical decoupling that motivated the two-regime architecture was confirmed by five independent analytical methods (see preprint for details):
+
+1. **Ablation** — gel-only classifier achieves AUC = 0.688 (occurrence), electro-only regressor achieves R² = 0.629 (geometry); 95% CIs do not overlap.
+2. **Mutual information** — MI(gel; rings) = 0.035 vs. MI(electro; rings) = 0.010; MI(electro; p) = 0.102 vs. MI(gel; p) = 0.053.
+3. **Counterfactual analysis** — electric field changes p but not the ring probability; gel type changes the ring probability but not p.
+4. **Classical-formula benchmarks** — a model trained only on classical descriptors (Ostwald, Jablczynski, Matalon–Packter, Lagzi–Izsák) achieves AUC = 0.484 and R² = 0.116.
+5. **Non-parametric statistics** — gel effect on rings: p = 3.1×10⁻⁹; Péclet effect on rings: p = 0.24 (n.s.); Péclet effect on spacing: p = 3.1×10⁻⁵.
 
 ---
 
 ## Model Limitations
 
-- The classifier is trained on an imbalanced dataset (194 positive, 43 negative); however, the use of scale_pos_weight and calibration mitigates bias.  
-- The model does not account for gel aging, impurities, complexation, or redox reactions — these may affect real experiments.  
-- Best predictions are obtained for ionic precipitation in gelatin gels with concentrations 0.01–0.5 M; extrapolation to mixed gels or extreme pH should be done with caution.  
-- Applicable only to gel‑based ionic precipitation systems; do not use for gas‑phase or gel‑free media.
+- The classifier is trained on an imbalanced dataset (194 positive, 43 negative); however, the use of `scale_pos_weight` and probability calibration mitigates bias.
+- The model does not account for gel aging, impurities, complexation, or redox reactions — these may affect real experiments.
+- Best predictions are obtained for ionic precipitation in gelatin gels with concentrations 0.01–0.5 M; extrapolation to mixed gels or extreme pH should be done with caution.
+- Applicable only to gel-based ionic precipitation systems; do not use for gas-phase or gel-free media.
+- The two-regime architecture reflects a fundamental physical decoupling: gel structure controls *whether* rings form, while electric field and pH control *how far apart* they are. This has been confirmed on 237 experiments and 5 independent analytical methods.
 
 ---
 
@@ -175,7 +209,7 @@ Sultan, R.; Ortoleva, P. Periodic and aperiodic macroscopic patterning in two pr
 The Precipitation of Strontium Sulfate in Gels. Digital Library UNT. https://digital.library.unt.edu/ (accessed 2026-04-24).  
 Estimation of diffusion coefficient of lanthanum ions from one-dimensional Liesegang formation. INIS-MF-10571, 1985. INIS Repository.  
 Growth of mixed rare-earth tartrate crystals from silica-gels. University of Bologna, Dipartimento di Chimica G. Ciamician, 1990.  
-Al-Ghoul, M.; Ammar, M.; Al-Kaysi, R. O. Pattern Selection in Three-Precipitate Liesegang Systems. ACS Omega 2024, *9*, 43635–43641. DOI: 10.1021/acsomega.4c05000.
+Al-Ghoul, M.; Ammar, M.; Al-Kaysi, R. O. Pattern Selection in Three-Precipitate Liesegang Systems. ACS Omega 2024, *9*, 43635–43641. DOI: 10.1021/acsomega.4c05000.  
 Liesegang pattern formation by gas diffusion in silica aerogels. J. Non-Cryst. Solids 1998, *225*, 69–73. DOI: 10.1016/S0022-3093(98)00111-4.  
 Liu, W. Y. [某些混合无机盐体系形成 Liesegang 环的研究]. J. Ningxia Univ. (Nat. Sci. Ed.) 1993, *14*, 45–49.  
 Das, I.; et al. Studies on mixed metal chromate Liesegang systems. J. Indian Chem. Soc. 2000, *77*, 241–243.  
@@ -187,7 +221,12 @@ Hedges, E. S. Liesegang Rings and Other Periodic Structures; Chapman and Hall: L
 Müller, S. C.; Kai, S.; Ross, J. Periodic precipitation patterns in the presence of concentration gradients. Science 1982, *216*, 635–637. DOI: 10.1126/science.216.4546.635.  
 Kai, S.; Müller, S. C. Spatial and Temporal Patterns in Precipitation Reactions. Science 1985, *229*, 1015–1019. DOI: 10.1126/science.229.4717.1015.
 
+---
+
+## Links
+
 - Dataset: `liesegang_dataset.xlsx`
 - Code: `Prediction of Liesegang Rings Machine python.py`
 - Executable: `Proshin_Liesegang_Predictor_Machine.exe` (in ZIP archive from [Yandex Disk](https://disk.yandex.ru/d/cPIJQzZGf9UhVg))
 - Repository: [nickitkaproshin-lab/Proshin-liesegang-rings-prediction](https://github.com/nickitkaproshin-lab/Proshin-liesegang-rings-prediction)
+- Preprint: [10.5281/zenodo.22682566](https://doi.org/10.5281/zenodo.22682566)
